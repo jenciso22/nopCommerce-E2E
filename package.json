@@ -1,0 +1,26 @@
+{
+  "name": "pagemodeltest",
+  "version": "1.0.0",
+  "description": "TestCafe Automation with POM",
+  "main": "index.js",
+  "scripts": {
+    "test": "testcafe",
+    "test:safari": "testcafe safari ./page_objects/tests/RegistrationTest.js --skip-js-errors",
+    "test:chrome": "testcafe chrome ./page_objects/tests/RegistrationTest.js --skip-js-errors",
+    "test:firefox": "testcafe firefox ./page_objects/tests/RegistrationTest.js --skip-js-errors",
+    "test:safari:e2e": "testcafe safari ./page_objects/tests/E2ETest.js --skip-js-errors",
+    "test:chrome:e2e": "testcafe chrome ./page_objects/tests/E2ETest.js --skip-js-errors",
+    "test:firefox:e2e": "testcafe firefox ./page_objects/tests/E2ETest.js --skip-js-errors"
+  },
+  "keywords": [
+    "Automation",
+    "TestCafe",
+    "POM"
+  ],
+  "author": "Jose Enciso",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "testcafe": "^1.18.3"
+  }
+}

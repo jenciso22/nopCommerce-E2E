@@ -1,0 +1,16 @@
+{
+    "browsers": "chrome",
+    "src": "page_objects/tests",
+    "screenshots": {
+        "path": "reports/screenshots",
+        "takeOnFails": true,
+        "fullPage": true
+    },
+    "concurrency": 1,
+    "selectorTimeout": 3000,
+    "assertionTimeout": 1000,
+    "pageLoadTimeout": 1000,
+    "speed": 1
+
+}
+
