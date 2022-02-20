@@ -5,7 +5,7 @@ import { URLS } from "../data/Constants";
 import LoginPage from "../pages/LoginPage";
 import CustomerPage from "../pages/CustomerPage";
 
-
+const dataSet = require('../data/data.json')
 const getURL = ClientFunction(() => window.location.href);
 var randomNumber = Math.floor(Math.random() * 10000)
 var userEmail = 'moataz'+randomNumber+'@test.com'
@@ -21,21 +21,22 @@ test('Assert Home Page Test', async t => {
         .expect(homePage.subTitleHeader.exists).ok()
 } )
 
+dataSet.forEach(data => {    // TDD with the DATA SET (data.json)
 test("User Registration and Login Test", async t => {
 
     await t
         .click(homePage.registerLink)
         .expect(getURL()).contains('register')
         .click(registerPage.genderOption)
-        .typeText(registerPage.firstName, 'Moatz')
-        .typeText(registerPage.lastName, 'Lasting')
-        await registerPage.selectDay('5')
-        await registerPage.selectMonth('November')
-        await registerPage.selectYear('1995')
+        .typeText(registerPage.firstName, data.firstname)
+        .typeText(registerPage.lastName, data.lastname)
+        await registerPage.selectDay(data.birthday)
+        await registerPage.selectMonth(data.birthmonth)
+        await registerPage.selectYear(data.birthyear)
         await t
-            .typeText(registerPage.email, userEmail)
-            .typeText(registerPage.password, '123456')
-            .typeText(registerPage.confirmPassword, '123456')
+            .typeText(registerPage.email,data.email+randomNumber+'@test.com')
+            .typeText(registerPage.password,data.password)
+            .typeText(registerPage.confirmPassword,data.password)
             .click(registerPage.registerButton)
             .expect(registerPage.successfulMessage.exists).ok()
             //Logout
@@ -43,8 +44,8 @@ test("User Registration and Login Test", async t => {
             //Login with register account
             .click(homePage.loginLink)
             .expect(LoginPage.accountHeader.exists).ok()
-            .typeText(LoginPage.emapilInput,userEmail)
-            .typeText(LoginPage.passwordInput,'123456')
+            .typeText(LoginPage.emapilInput,data.email+randomNumber+'@test.com')
+            .typeText(LoginPage.passwordInput,data.password)
             .click(LoginPage.submitButton)
             //Go to my account
             .click(homePage.myAccountLink)
@@ -54,7 +55,7 @@ test("User Registration and Login Test", async t => {
             .expect(CustomerPage.noOrdersLabel.exists).ok()
             .takeScreenshot()
     
-});
+})});
 
 
 

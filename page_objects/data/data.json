@@ -1,0 +1,21 @@
+[
+    {
+        "firstname": "Mine",
+        "lastname": "Guzman",
+        "birthday": "5",
+        "birthmonth": "November",
+        "birthyear": "1983",
+        "email": "todayts",
+        "password": "1234685"
+
+    },
+    {
+        "firstname": "Luz",
+        "lastname": "Juane",
+        "birthday": "2",
+        "birthmonth": "June",
+        "birthyear": "1982",
+        "email": "Juanbond",
+        "password": "4321666"
+    }
+]

@@ -21,6 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "cucumber": "^7.0.0-rc.0",
     "testcafe": "^1.18.3"
   }
 }
