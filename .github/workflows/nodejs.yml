@@ -14,4 +14,4 @@ jobs:
       - name: Install TestCafe from npm and Run tests 
         uses: DevExpress/testcafe-action@latest
         with: 
-          args: "chrome test"
+          args: "chrome ./page_objects/tests"
